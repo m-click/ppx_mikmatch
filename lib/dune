@@ -6,7 +6,8 @@
  (libraries ppxlib re re.perl))
 
 (menhir
- (modules mik_parser))
+ (modules mik_parser)
+ (flags --unused-precedence-levels))
 
 (ocamllex
  (modules mik_lexer))
