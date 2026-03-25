@@ -88,6 +88,20 @@ let do_something = function%mikmatch
   | _ -> ...
 ```
 
+You can also reference patterns from modules and vice versa:
+```ocaml
+module Patterns = struct
+  let%mikmatch hex = {| ['0'-'9' 'a'-'f']+ |}
+end
+
+let%mikmatch hex_with_prefix = {| "0x" Patterns.hex |}
+
+module MorePatterns = struct
+  let%mikmatch multiple_hexes = {| Patterns.hex+ |}
+  let%mikmatch multiple_prefixed_hexes = {| hex_with_prefix+ |}
+end
+```
+
 ### Variable capture
 ```ocaml
 let%mikmatch num = {| digit+ |}
