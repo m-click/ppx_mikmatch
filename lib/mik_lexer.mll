@@ -24,7 +24,8 @@ let predefined_classes = [
   ("bnd", {|\b|});
   ("bos", {|^|});
   ("bol", {|^|[\n]|});
-  ("any", {|[^\n]|});
+  ("any", {|[\s\S]|});
+  ("notnl", {|[^\n]|});
 ]
 
 let escape_char = function

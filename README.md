@@ -71,7 +71,8 @@ Available in patterns:
 - `bol` - beginning of line (start of string or after newline)
 - `eol` - end of line (end of string or newline)
 - `bnd` - word boundary (`\b`)
-- `any` - any character except newline
+- `notnl` - any character except newline
+- `any` - any character (including newline)
 
 **Repetition:** `*`, `+`, `?`, `{n}`, `{n-m}`, `{n-}`
 
