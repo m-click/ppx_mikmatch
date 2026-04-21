@@ -38,10 +38,10 @@ below an optionally matched group.
 
 Additional extensions:
 
-- `let%mikmatch name = {|re|}` defines reusable patterns for use within `(?U/N<name>)` patterns
+- `let%mikmatch name = {|re|}` defines reusable patterns for use within other patterns
 - `type name = {%mikmatch| re |}` generates record types with parse/pp functions from patterns
 - let destructuring via `let%pcre/mikmatch {| regex |} = s`, where `regex` binds values and `s` is the input string
-- `/regex/flags` for providing compiler flags. `i` for caseless, `a` (%pcre) anchored, `u` (%mikmatch) unanchored
+- `/regex/flags` for providing compiler flags. `i` for caseless, `u` (%mikmatch) unanchored
 - Caseless groups via the `~` operator
 - Mixed matching (raw strings supported) via `function | {%mikmatch| ... |} -> ... | "raw string" -> ...`
 - Matching guards are supported across all match extensions
